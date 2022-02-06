@@ -1,0 +1,32 @@
+{
+    "name": "grzegorz-jamroz/filesystem",
+    "description": "The project provides basic file and folder operations.",
+    "authors": [
+        {
+            "name": "Grzegorz Jamróz",
+            "email": "grzegorz.jamrooz@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Ifrost\\Filesystem\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "grzegorz-jamroz/dotenv": "dev-master",
+        "grzegorz-jamroz/foundations": "dev-master"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.4",
+        "friendsofphp/php-cs-fixer": "^3.5",
+        "phpunit/phpunit": "^9.5",
+        "symfony/var-dumper": "^6.0"
+    }
+}

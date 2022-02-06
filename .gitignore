@@ -1,0 +1,17 @@
+.idea
+.php-cs-fixer.cache
+.phpunit.result.cache
+.phpunit.cache
+.env
+
+composer.phar
+
+vendor
+data
+!tests/data
+tests/data/immutable_dir
+tests/data/immutable_file.txt
+tests/data/protected.txt
+tests/data/read-only.txt
+tests/data/immutable_dir_new
+tests/data/immutable_dir_with_content
