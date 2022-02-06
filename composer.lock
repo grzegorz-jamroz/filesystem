@@ -4,50 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4bd71c5a41154893039e7e65e8b011d9",
+    "content-hash": "115a2708eeafd78304b9f2d7a0f5c9f0",
     "packages": [
-        {
-            "name": "grzegorz-jamroz/dotenv",
-            "version": "0.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/grzegorz-jamroz/dotenv.git",
-                "reference": "d389c85e3c604336cd0687bf7d91b6f0c0f92d32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/grzegorz-jamroz/dotenv/zipball/d389c85e3c604336cd0687bf7d91b6f0c0f92d32",
-                "reference": "d389c85e3c604336cd0687bf7d91b6f0c0f92d32",
-                "shasum": ""
-            },
-            "require": {
-                "grzegorz-jamroz/plain-data-transformer": "^0.0.2",
-                "php": ">=8.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.5",
-                "phpstan/phpstan": "^1.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Ifrost\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Grzegorz Jamróz",
-                    "email": "grzegorz.jamrooz@gmail.com"
-                }
-            ],
-            "description": "A PHP library for loading environment variables from .env file.",
-            "support": {
-                "issues": "https://github.com/grzegorz-jamroz/dotenv/issues",
-                "source": "https://github.com/grzegorz-jamroz/dotenv/tree/0.0.1"
-            },
-            "time": "2022-02-06T21:48:35+00:00"
-        },
         {
             "name": "grzegorz-jamroz/foundations",
             "version": "0.0.1",
@@ -88,41 +46,6 @@
                 "source": "https://github.com/grzegorz-jamroz/foundations/tree/0.0.1"
             },
             "time": "2022-02-06T21:25:16+00:00"
-        },
-        {
-            "name": "grzegorz-jamroz/plain-data-transformer",
-            "version": "0.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/grzegorz-jamroz/plain-data-transformer.git",
-                "reference": "e467fe82032cc6e2a01ec5ff4503e6aa76c51532"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/grzegorz-jamroz/plain-data-transformer/zipball/e467fe82032cc6e2a01ec5ff4503e6aa76c51532",
-                "reference": "e467fe82032cc6e2a01ec5ff4503e6aa76c51532",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.5",
-                "phpstan/phpstan": "^1.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PlainDataTransformer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "A PHP library for transforming various data to specific format.",
-            "support": {
-                "issues": "https://github.com/grzegorz-jamroz/plain-data-transformer/issues",
-                "source": "https://github.com/grzegorz-jamroz/plain-data-transformer/tree/0.0.2"
-            },
-            "time": "2022-02-06T21:44:03+00:00"
         }
     ],
     "packages-dev": [
@@ -649,6 +572,83 @@
                 }
             ],
             "time": "2022-01-14T00:29:20+00:00"
+        },
+        {
+            "name": "grzegorz-jamroz/dotenv",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grzegorz-jamroz/dotenv.git",
+                "reference": "d389c85e3c604336cd0687bf7d91b6f0c0f92d32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grzegorz-jamroz/dotenv/zipball/d389c85e3c604336cd0687bf7d91b6f0c0f92d32",
+                "reference": "d389c85e3c604336cd0687bf7d91b6f0c0f92d32",
+                "shasum": ""
+            },
+            "require": {
+                "grzegorz-jamroz/plain-data-transformer": "^0.0.2",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "phpstan/phpstan": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ifrost\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Grzegorz Jamróz",
+                    "email": "grzegorz.jamrooz@gmail.com"
+                }
+            ],
+            "description": "A PHP library for loading environment variables from .env file.",
+            "support": {
+                "issues": "https://github.com/grzegorz-jamroz/dotenv/issues",
+                "source": "https://github.com/grzegorz-jamroz/dotenv/tree/0.0.1"
+            },
+            "time": "2022-02-06T21:48:35+00:00"
+        },
+        {
+            "name": "grzegorz-jamroz/plain-data-transformer",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grzegorz-jamroz/plain-data-transformer.git",
+                "reference": "e467fe82032cc6e2a01ec5ff4503e6aa76c51532"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grzegorz-jamroz/plain-data-transformer/zipball/e467fe82032cc6e2a01ec5ff4503e6aa76c51532",
+                "reference": "e467fe82032cc6e2a01ec5ff4503e6aa76c51532",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "phpstan/phpstan": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PlainDataTransformer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "A PHP library for transforming various data to specific format.",
+            "support": {
+                "issues": "https://github.com/grzegorz-jamroz/plain-data-transformer/issues",
+                "source": "https://github.com/grzegorz-jamroz/plain-data-transformer/tree/0.0.2"
+            },
+            "time": "2022-02-06T21:44:03+00:00"
         },
         {
             "name": "myclabs/deep-copy",
