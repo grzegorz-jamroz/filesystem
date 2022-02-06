@@ -1,13 +1,12 @@
 {
     "name": "grzegorz-jamroz/filesystem",
-    "description": "The project provides basic file and folder operations.",
+    "description": "A PHP library for handling file and folder operations.",
     "authors": [
         {
             "name": "Grzegorz Jamróz",
             "email": "grzegorz.jamrooz@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Ifrost\\Filesystem\\": "src/"
@@ -20,8 +19,8 @@
     },
     "require": {
         "php": ">=8.0",
-        "grzegorz-jamroz/dotenv": "dev-master",
-        "grzegorz-jamroz/foundations": "dev-master"
+        "grzegorz-jamroz/dotenv": "^0.0.1",
+        "grzegorz-jamroz/foundations": "^0.0.1"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.4",

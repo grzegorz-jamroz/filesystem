@@ -16,17 +16,3 @@
 ```
 composer require grzegorz-jamroz/filesystem
 ```
-
-## Commands
-
-Run static code analysis
-
-```
-bin/fix
-```
-
-Run all tests
-
-```
-bin/test
-```
