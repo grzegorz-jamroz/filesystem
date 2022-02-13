@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ifrost\Filesystem;
 
 use Ifrost\Filesystem\File\Exception\FileAlreadyExists;
+use Ifrost\Filesystem\File\Exception\FileNotExist;
 
 interface JsonFileInterface extends FileInterface
 {
@@ -35,6 +36,8 @@ interface JsonFileInterface extends FileInterface
      * @phpstan-param int<1, max> $depth
      *
      * @return array<string, mixed>
+     *
+     * @throws FileNotExist
      */
     public function read(bool $associative = true, int $flags = 0, int $depth = 512): array;
 }
