@@ -163,4 +163,18 @@ class CopyDirectoryTest extends TestCase
         // When & Then
         (new Directory($oldDirectoryPath))->copy($newDirectoryPath);
     }
+
+    public function testShouldThrowInvalidArgumentExceptionWhenDirectoryPathIsNotDirectory()
+    {
+        // Expect && Given
+        $directoryPath = sprintf('%s/directory/copy-directory/wrong_path', DATA_DIRECTORY);
+        $filename = sprintf('%s/test.txt', $directoryPath);
+        $newDirectoryPath = sprintf('%s/new_directory', $directoryPath);
+        $this->createFileIfNotExists($filename);
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(sprintf('Unable copy directory "%s". Given directory path is not directory.', $filename));
+
+        // When & Then
+        (new Directory($filename))->copy($newDirectoryPath);
+    }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\Directory;
 
+use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;
 use Ifrost\Foundations\Acquirable;
 use PlainDataTransformer\Transform;
 
@@ -45,6 +46,10 @@ class GetFilesFromDirectory implements Acquirable
 
     private function getFiles(string $dirPath, array $options = []): array
     {
+        if (!file_exists($dirPath)) {
+            throw new DirectoryNotExist(sprintf('Unable get files from directory "%s". Directory does not exist.', $dirPath));
+        }
+
         if (!is_dir($dirPath)) {
             throw new \InvalidArgumentException(sprintf('%s is not directory.', $dirPath));
         }

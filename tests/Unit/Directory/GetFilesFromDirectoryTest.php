@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Directory;
 
 use Ifrost\Filesystem\Directory;
+use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;
 use PHPUnit\Framework\TestCase;
 use Tests\Traits\TestUtils;
 
@@ -185,14 +186,14 @@ class GetFilesFromDirectoryTest extends TestCase
         (new Directory($filename))->getFiles();
     }
 
-    public function testShouldThrowRuntimeExceptionWhenDirectoryDoesNotExist()
+    public function testShouldThrowDirectoryNotExistWhenDirectoryDoesNotExist()
     {
         // Expect && Given
         $directoryPath = sprintf('%s/directory/get-files-from-directory/not_exist', DATA_DIRECTORY);
         (new Directory($directoryPath))->delete();
         $this->assertDirectoryDoesNotExist($directoryPath);
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage(sprintf('%s is not directory.', $directoryPath));
+        $this->expectException(DirectoryNotExist::class);
+        $this->expectExceptionMessage(sprintf('Unable get files from directory "%s". Directory does not exist.', $directoryPath));
 
         // When & Then
         (new Directory($directoryPath))->getFiles();

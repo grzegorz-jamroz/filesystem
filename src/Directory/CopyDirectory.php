@@ -23,8 +23,12 @@ class CopyDirectory implements Executable
 
     public function execute(): void
     {
-        if (!is_dir($this->oldDirectoryPath)) {
+        if (!file_exists($this->oldDirectoryPath)) {
             throw new DirectoryNotExist(sprintf('Unable copy directory "%s". Old directory does not exist.', $this->oldDirectoryPath));
+        }
+
+        if (!is_dir($this->oldDirectoryPath)) {
+            throw new \InvalidArgumentException(sprintf('Unable copy directory "%s". Given directory path is not directory.', $this->oldDirectoryPath));
         }
 
         try {
