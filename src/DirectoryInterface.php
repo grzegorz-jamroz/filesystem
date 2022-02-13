@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ifrost\Filesystem;
 
 use Ifrost\Filesystem\Directory\Exception\DirectoryAlreadyExists;
+use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;
 
 interface DirectoryInterface
 {
@@ -18,10 +19,18 @@ interface DirectoryInterface
         int $permissions = 0777,
         bool $recursive = true
     ): void;
+
     public function delete(): void;
+
+    /**
+     * @throws DirectoryNotExist when copied directory does not exist
+     */
     public function copy(string $newDirectoryPath): void;
+
     public function rename(string $newDirectoryPath): void;
+
     public function getPath(): string;
+
     public function getParentPath(): string;
 
     /**
@@ -32,6 +41,8 @@ interface DirectoryInterface
      * order => string (asc or desc) | default: asc
      *
      * @return array<int, string>
+     *
+     * @throws DirectoryNotExist when directory does not exist
      */
     public function getFiles(array $options = []): array;
 

@@ -44,6 +44,17 @@ class GetFilesFromDirectory implements Acquirable
         return $files;
     }
 
+    /**
+     * @param array<string, mixed> $options
+     * @description options:
+     * extension => string | default: empty string
+     * recursive => bool | default: false
+     * order => string (asc or desc) | default: asc
+     *
+     * @return array<int, string>
+     *
+     * @throws DirectoryNotExist
+     */
     private function getFiles(string $dirPath, array $options = []): array
     {
         if (!file_exists($dirPath)) {
