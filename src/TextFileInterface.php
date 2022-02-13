@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ifrost\Filesystem;
 
 use Ifrost\Filesystem\File\Exception\FileAlreadyExists;
+use Ifrost\Filesystem\File\Exception\FileNotExist;
 
 interface TextFileInterface extends FileInterface
 {
@@ -32,6 +33,8 @@ interface TextFileInterface extends FileInterface
 
     /**
      * The method will return the contents of the file if it exists.
+     *
+     * @throws FileNotExist
      */
     public function read(): string;
 }

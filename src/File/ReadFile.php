@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Ifrost\Filesystem\File\Exception\FileNotExist;
 use Ifrost\Foundations\Acquirable;
 
 class ReadFile implements Acquirable
@@ -18,7 +19,7 @@ class ReadFile implements Acquirable
     public function acquire(): string
     {
         if (!is_file($this->filename)) {
-            throw new \RuntimeException(sprintf('Unable to read file. File %s not exist.', $this->filename));
+            throw new FileNotExist(sprintf('Unable to read file. File %s not exist.', $this->filename));
         }
 
         try {

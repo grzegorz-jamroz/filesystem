@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\File;
 
 use Ifrost\Filesystem\File;
+use Ifrost\Filesystem\File\Exception\FileNotExist;
 use Ifrost\Filesystem\TextFile;
 use PHPUnit\Framework\TestCase;
 use Tests\Traits\TestUtils;
@@ -52,7 +53,7 @@ class ReadFileTest extends TestCase
     {
         // Expect & Given
         $filename = sprintf('%s/file/read-file/sample_%s.txt', DATA_DIRECTORY, time());
-        $this->expectException(\RuntimeException::class);
+        $this->expectException(FileNotExist::class);
         $this->expectExceptionMessage(sprintf('Unable to read file. File %s not exist.', $filename));
         $this->assertFileDoesNotExist($filename);
 
