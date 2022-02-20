@@ -19,7 +19,7 @@
     },
     "require": {
         "php": ">=8.0",
-        "grzegorz-jamroz/foundations": "^0.0.1",
+        "grzegorz-jamroz/foundations": "^0.0.2",
         "grzegorz-jamroz/plain-data-transformer": "^0.0.2"
     },
     "require-dev": {
