@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5a5bb2ae9672f81cb4bf6163e878c1e",
+    "content-hash": "06d2bd6ba951c5f458f4b5eaefc5cabe",
     "packages": [
         {
             "name": "grzegorz-jamroz/foundations",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grzegorz-jamroz/foundations.git",
-                "reference": "d92ec57a7de96ce4c7ae4458107a1bc0f7a24efa"
+                "reference": "99ff612a0f13257c97323fa7d3bfae45a997a5a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grzegorz-jamroz/foundations/zipball/d92ec57a7de96ce4c7ae4458107a1bc0f7a24efa",
-                "reference": "d92ec57a7de96ce4c7ae4458107a1bc0f7a24efa",
+                "url": "https://api.github.com/repos/grzegorz-jamroz/foundations/zipball/99ff612a0f13257c97323fa7d3bfae45a997a5a3",
+                "reference": "99ff612a0f13257c97323fa7d3bfae45a997a5a3",
                 "shasum": ""
             },
             "require": {
@@ -43,9 +43,9 @@
             "description": "Project contains fundamental interfaces for iFrost packages.",
             "support": {
                 "issues": "https://github.com/grzegorz-jamroz/foundations/issues",
-                "source": "https://github.com/grzegorz-jamroz/foundations/tree/0.0.2"
+                "source": "https://github.com/grzegorz-jamroz/foundations/tree/0.0.3"
             },
-            "time": "2022-02-20T11:05:18+00:00"
+            "time": "2022-02-20T18:28:59+00:00"
         },
         {
             "name": "grzegorz-jamroz/plain-data-transformer",
