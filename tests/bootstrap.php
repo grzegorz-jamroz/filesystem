@@ -1,11 +1,17 @@
 <?php
 
-use Symfony\Component\Dotenv\Dotenv;
+use Ifrost\DotEnv;
 
-require dirname(__DIR__, 4) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+error_reporting(E_ALL);
+
+set_error_handler(function ($severity, $message, $file, $line) {
+    throw new ErrorException($message, 0, $severity, $file, $line);
+});
 
 define('ABSPATH', dirname(__DIR__));
 define('DATA_DIRECTORY', ABSPATH . '/data');
 define('TESTS_DATA_DIRECTORY', ABSPATH . '/tests/data');
 
-(new Dotenv())->load(sprintf('%s/.env', ABSPATH));
+(new DotEnv(dirname(__DIR__) . '/.env'))->load();

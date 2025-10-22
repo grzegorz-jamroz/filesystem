@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92fdac7e04d28449a4e8bc46df11cdf0",
+    "content-hash": "8d4308ef0b04576e3cd4103065ae9c5c",
     "packages": [
         {
             "name": "grzegorz-jamroz/foundations",
@@ -588,6 +588,48 @@
                 }
             ],
             "time": "2025-10-18T19:30:16+00:00"
+        },
+        {
+            "name": "grzegorz-jamroz/dotenv",
+            "version": "v0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grzegorz-jamroz/dotenv.git",
+                "reference": "4a2c6b8d277ca9a8309b0cad6554f41589b1fc03"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grzegorz-jamroz/dotenv/zipball/4a2c6b8d277ca9a8309b0cad6554f41589b1fc03",
+                "reference": "4a2c6b8d277ca9a8309b0cad6554f41589b1fc03",
+                "shasum": ""
+            },
+            "require": {
+                "grzegorz-jamroz/plain-data-transformer": "^1.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "phpstan/phpstan": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ifrost\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Grzegorz Jamróz",
+                    "email": "grzegorz.jamrooz@gmail.com"
+                }
+            ],
+            "description": "A PHP library for loading environment variables from .env file.",
+            "support": {
+                "issues": "https://github.com/grzegorz-jamroz/dotenv/issues",
+                "source": "https://github.com/grzegorz-jamroz/dotenv/tree/v0.0.2"
+            },
+            "time": "2023-11-26T16:25:12+00:00"
         },
         {
             "name": "myclabs/deep-copy",

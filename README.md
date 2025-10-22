@@ -19,10 +19,21 @@ composer require grzegorz-jamroz/filesystem
 
 # Development with Docker
 
-### Build and run the containers:
+### Create .env file:
 ```shell
-docker compose up -d
+cp .env-example .env
 ```
+
+### Build and run the containers:
+1.  Create .env file:
+    ```shell
+    cp .env-example .env
+    ```
+
+2.  Run Docker containers in detached mode:
+    ```shell
+    docker compose up -d
+    ```
 
 ### Copy vendor folder from container to host
 

@@ -7,7 +7,7 @@ namespace Ifrost\Filesystem\Tests\Unit;
 use Ifrost\Filesystem\Directory;
 use Ifrost\Filesystem\JsonFile;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestUtils;
+use Ifrost\Filesystem\Tests\Traits\TestUtils;
 
 class JsonFileTest extends TestCase
 {

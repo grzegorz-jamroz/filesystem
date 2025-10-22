@@ -26,6 +26,7 @@
     "require-dev": {
       "phpunit/phpunit": "^12.4",
       "friendsofphp/php-cs-fixer": "^3.89",
-      "phpstan/phpstan": "^2.1"
+      "phpstan/phpstan": "^2.1",
+        "grzegorz-jamroz/dotenv": "^0.0.2"
     }
 }

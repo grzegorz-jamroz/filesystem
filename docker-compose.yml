@@ -11,6 +11,8 @@ services:
       - ./bin:/app/bin
       - ./src:/app/src
       - ./tests:/app/tests
+      - ./.env:/app/.env
+      - ./.env-example:/app/.env-example
       - ./.php-cs-fixer.dist.php:/app/.php-cs-fixer.dist.php
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
