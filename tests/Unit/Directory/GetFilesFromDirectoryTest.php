@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Directory;
+namespace Ifrost\Filesystem\Tests\Unit\Directory;
 
 use Ifrost\Filesystem\Directory;
 use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;

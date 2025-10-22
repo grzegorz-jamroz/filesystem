@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\File;
+namespace Ifrost\Filesystem\Tests\Unit\File;
 
 use Ifrost\Filesystem\File;
 use Ifrost\Filesystem\File\Exception\FileAlreadyExists;
 use Ifrost\Filesystem\File\Exception\FileNotExist;
 use Ifrost\Filesystem\TextFile;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestUtils;
+use Ifrost\Filesystem\Tests\Traits\TestUtils;
 
 class CopyFileTest extends TestCase
 {

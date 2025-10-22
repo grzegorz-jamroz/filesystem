@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Directory;
+namespace Ifrost\Filesystem\Tests\Unit\Directory;
 
 use Ifrost\Filesystem\Directory;
 use Ifrost\Filesystem\Directory\Exception\DirectoryAlreadyExists;
 use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestUtils;
+use Ifrost\Filesystem\Tests\Traits\TestUtils;
 
 class RenameDirectoryTest extends TestCase
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Init;
+namespace Ifrost\Filesystem\Tests\Init;
 
 use Ifrost\Filesystem\Directory;
 use PHPUnit\Framework\TestCase;

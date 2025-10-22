@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Traits;
+namespace Ifrost\Filesystem\Tests\Traits;
 
 use Ifrost\Filesystem\Directory;
 use Ifrost\Filesystem\Directory\Exception\DirectoryAlreadyExists;
