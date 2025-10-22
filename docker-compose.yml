@@ -1,0 +1,20 @@
+services:
+  app:
+    environment:
+      - PHP_IDE_CONFIG=serverName=app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    working_dir: /app
+    container_name: filesystem-app
+    volumes:
+      - ./bin:/app/bin
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./.php-cs-fixer.dist.php:/app/.php-cs-fixer.dist.php
+      - ./composer.json:/app/composer.json
+      - ./composer.lock:/app/composer.lock
+      - ./phpstan.neon:/app/phpstan.neon
+      - ./phpunit.xml:/app/phpunit.xml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
