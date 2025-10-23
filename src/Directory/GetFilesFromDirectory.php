@@ -73,13 +73,14 @@ class GetFilesFromDirectory implements Acquirable
         }
 
         $pattern = sprintf('%s*%s', $dirPath, $this->extension);
-        $files = glob($pattern, GLOB_MARK) ?: [];
+        $files = array_map('strval', glob($pattern, GLOB_MARK) ?: []);
 
         if ($this->isRecursive === false) {
             return array_values(array_filter($files, fn (string $file) => is_file($file)));
         }
 
-        return array_reduce(
+        /** @var array<int, string> $files */
+        $files = array_reduce(
             $files,
             function (array $acc, string $file) use ($options) {
                 if (is_dir($file)) {
@@ -94,6 +95,8 @@ class GetFilesFromDirectory implements Acquirable
             },
             []
         );
+
+        return $files;
     }
 
     private function setExtension(): void

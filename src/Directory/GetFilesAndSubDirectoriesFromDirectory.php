@@ -42,6 +42,11 @@ class GetFilesAndSubDirectoriesFromDirectory implements Acquirable
         return $files;
     }
 
+    /**
+     * @param array<string, mixed> $options
+     *
+     * @return array<int, string>
+     */
     private function getFiles(string $dirPath, array $options = []): array
     {
         if (!is_dir($dirPath)) {
@@ -53,13 +58,14 @@ class GetFilesAndSubDirectoriesFromDirectory implements Acquirable
         }
 
         $pattern = sprintf('%s*', $dirPath);
-        $files = glob($pattern, GLOB_MARK) ?: [];
+        $files = array_map('strval', glob($pattern, GLOB_MARK) ?: []);
 
         if ($this->isRecursive === false) {
-            return array_values(array_filter($files, fn (string $file) => $file));
+            return $files;
         }
 
-        return array_reduce(
+        /** @var array<int, string> $files */
+        $files = array_reduce(
             $files,
             function (array $acc, string $file) use ($options) {
                 $acc[] = $file;
@@ -72,6 +78,8 @@ class GetFilesAndSubDirectoriesFromDirectory implements Acquirable
             },
             []
         );
+
+        return $files;
     }
 
     private function setIsRecursive(): void

@@ -27,8 +27,6 @@ class GetFileFullName implements Acquirable
             ++$length;
         }
 
-        $fileName = substr($this->filename, $length, strlen($this->filename));
-
-        return $fileName === false ? '' : $fileName;
+        return substr($this->filename, $length, strlen($this->filename));
     }
 }

@@ -22,11 +22,17 @@ class JsonFile extends Operation implements JsonFileInterface
         (new Operation\OverwriteFile($this->filename, $json))->execute();
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function read(bool $associative = true, int $flags = 0, int $depth = 512): array
     {
         $content = (new Operation\ReadFile($this->filename))->acquire();
         $data = json_decode($content, $associative, $depth, $flags);
 
-        return is_array($data) ? $data : [];
+        /** @var array<string, mixed> $data */
+        $data = is_array($data) ? $data : [];
+
+        return $data;
     }
 }
