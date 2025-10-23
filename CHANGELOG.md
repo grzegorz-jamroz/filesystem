@@ -1,7 +1,15 @@
 # Changelog
-## [v1.0.0] - 2025.10.22
+## [v1.0.0] - 2025.10.23
 ### Add
-- Add docker support for development environment
+- add docker support for development environment
+
+### Change
+- change namespace for tests
+
+### Fix
+- fix PHPStan errors
+- PHP CS Fixer fixes
+- fixed few tests in case of new Docker support
 
 ## [v0.1.0] - 2023.11.26
 
