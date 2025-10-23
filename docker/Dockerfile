@@ -40,5 +40,6 @@ COPY ./tests /app/tests
 RUN composer install
 
 RUN sudo chown -R appuser:appuser /app
+RUN sudo mkdir -p /opt/phpstorm-coverage && sudo chown 1000:1000 /opt/phpstorm-coverage
 
 CMD ["tail", "-f", "/dev/null"]
