@@ -93,7 +93,6 @@ class RenameFileTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenUnableToRenameFile()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $oldFilename = sprintf('%s/immutable_file.txt', TESTS_DATA_DIRECTORY);

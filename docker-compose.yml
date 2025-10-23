@@ -1,5 +1,6 @@
 services:
   app:
+    privileged: true
     environment:
       - PHP_IDE_CONFIG=serverName=app
     build:
@@ -10,9 +11,10 @@ services:
     volumes:
       - ./bin:/app/bin
       - ./src:/app/src
-      - ./tests:/app/tests
-      - ./.env:/app/.env
-      - ./.env-example:/app/.env-example
+      - ./tests/Init:/app/tests/Init
+      - ./tests/Traits:/app/tests/Traits
+      - ./tests/Unit:/app/tests/Unit
+      - ./tests/bootstrap.php:/app/tests/bootstrap.php
       - ./.php-cs-fixer.dist.php:/app/.php-cs-fixer.dist.php
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock

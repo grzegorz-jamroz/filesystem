@@ -2,7 +2,9 @@ FROM php:8.4-cli
 
 RUN apt-get update && apt-get install -y \
     git \
-    unzip
+    unzip \
+    e2fsprogs \
+    sudo
 
 ## Install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
@@ -22,11 +24,21 @@ RUN chmod +x /usr/local/bin/xdebug
 
 RUN xdebug off
 
+RUN useradd -u 1000 -m appuser
+RUN passwd -d appuser
+RUN echo "appuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+USER 1000
+
 WORKDIR /app
+
+RUN touch /app/.env
 
 COPY ./composer.json /app/composer.json
 COPY ./composer.lock /app/composer.lock
+COPY ./tests /app/tests
 
 RUN composer install
+
+RUN sudo chown -R appuser:appuser /app
 
 CMD ["tail", "-f", "/dev/null"]

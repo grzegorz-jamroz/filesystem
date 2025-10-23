@@ -121,7 +121,6 @@ class WriteFileTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenUnableToReadFile()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $filename = sprintf('%s/immutable_file.txt', TESTS_DATA_DIRECTORY);
@@ -140,7 +139,6 @@ class WriteFileTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenTryingToWriteToReadOnlyFile()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $filename = sprintf('%s/read-only.txt', TESTS_DATA_DIRECTORY);

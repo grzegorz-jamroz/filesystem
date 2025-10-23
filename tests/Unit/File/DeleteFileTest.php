@@ -54,7 +54,6 @@ class DeleteFileTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenUnableToDeleteFile()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $filename = sprintf('%s/immutable_file.txt', TESTS_DATA_DIRECTORY);

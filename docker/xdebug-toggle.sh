@@ -13,9 +13,8 @@ case "$1" in
   "on")
     # To enable, we rename the .disabled file back to .ini
     if [ -f "$DISABLED_INI_FILE" ]; then
-      mv "$DISABLED_INI_FILE" "$INI_FILE"
+      sudo mv "$DISABLED_INI_FILE" "$INI_FILE"
       echo "Xdebug is now enabled."
-      echo "Please restart the container for the changes to take effect: docker compose restart app"
     else
       echo "Xdebug is already enabled."
     fi
@@ -24,9 +23,8 @@ case "$1" in
   "off")
     # To disable, we rename the .ini file to .disabled
     if [ -f "$INI_FILE" ]; then
-      mv "$INI_FILE" "$DISABLED_INI_FILE"
+      sudo mv "$INI_FILE" "$DISABLED_INI_FILE"
       echo "Xdebug is now disabled."
-      echo "Please restart the container for the changes to take effect: docker compose restart app"
     else
       echo "Xdebug is already disabled."
     fi

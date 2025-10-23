@@ -70,7 +70,6 @@ class CreateFileIfNotExistsTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenUnableToCreateFile()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $directoryPath = sprintf('%s/immutable_dir', TESTS_DATA_DIRECTORY);

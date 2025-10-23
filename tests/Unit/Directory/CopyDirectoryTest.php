@@ -138,7 +138,6 @@ class CopyDirectoryTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenUnableToCopyDirectory()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $oldDirectoryPath = sprintf('%s/immutable_dir_with_content', TESTS_DATA_DIRECTORY);

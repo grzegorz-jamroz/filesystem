@@ -98,7 +98,6 @@ class CopyFileTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenUnableToCopyFile()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $oldFilename = sprintf('%s/immutable_file.txt', TESTS_DATA_DIRECTORY);

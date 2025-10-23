@@ -127,7 +127,6 @@ class RenameDirectoryTest extends TestCase
     public function testShouldThrowRuntimeExceptionWhenUnableToDeleteDirectory()
     {
         $this->endTestIfWindowsOs($this);
-        $this->endTestIfEnvMissing($this, ['SUDOER_PASSWORD']);
 
         // Expect & Given
         $oldDirectory = sprintf('%s/immutable_file', TESTS_DATA_DIRECTORY);

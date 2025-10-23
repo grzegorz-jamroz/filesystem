@@ -19,21 +19,13 @@ composer require grzegorz-jamroz/filesystem
 
 # Development with Docker
 
-### Create .env file:
+### Build and run the containers:
 ```shell
-cp .env-example .env
+docker compose up -d
 ```
 
-### Build and run the containers:
-1.  Create .env file:
-    ```shell
-    cp .env-example .env
-    ```
-
-2.  Run Docker containers in detached mode:
-    ```shell
-    docker compose up -d
-    ```
+*Note:* When working with Docker container - there is not need to create `.env` file with `SUDOER_PASSWORD=password`. 
+It could be only required when working on host machine to properly run all tests.
 
 ### Copy vendor folder from container to host
 
