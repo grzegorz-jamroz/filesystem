@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ifrost\Filesystem\Directory;
 
 use Ifrost\Foundations\Acquirable;
+use InvalidArgumentException;
 use PlainDataTransformer\Transform;
 
 class GetFilesAndSubDirectoriesFromDirectory implements Acquirable
@@ -14,6 +15,7 @@ class GetFilesAndSubDirectoriesFromDirectory implements Acquirable
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * recursive => bool | default: false
      * order => string (asc or desc) | default: asc
@@ -43,7 +45,7 @@ class GetFilesAndSubDirectoriesFromDirectory implements Acquirable
     private function getFiles(string $dirPath, array $options = []): array
     {
         if (!is_dir($dirPath)) {
-            throw new \InvalidArgumentException(sprintf('%s is not directory.', $dirPath));
+            throw new InvalidArgumentException(sprintf('%s is not directory.', $dirPath));
         }
 
         if (substr($dirPath, strlen($dirPath) - 1, 1) !== '/') {

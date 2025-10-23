@@ -25,9 +25,6 @@ class File implements FileInterface
         (new Operation\CopyFile($this->filename, $newFilename))->execute();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function rename(string $newFilename): void
     {
         (new Operation\RenameFile($this->filename, $newFilename))->execute();

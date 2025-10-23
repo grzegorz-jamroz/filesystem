@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\Directory;
 
-use Ifrost\Foundations\Executable;
+use Exception;
 use Ifrost\Filesystem\Directory\Exception\DirectoryAlreadyExists;
+use Ifrost\Foundations\Executable;
+use RuntimeException;
 
 class CreateDirectoryIfNotExists implements Executable
 {
@@ -29,9 +31,9 @@ class CreateDirectoryIfNotExists implements Executable
         }
 
         try {
-            mkdir($this->path, $this->permissions, $this->recursive) ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable to create directory "%s".', $this->path));
+            mkdir($this->path, $this->permissions, $this->recursive) ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable to create directory "%s".', $this->path));
         }
     }
 }

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Exception;
 use Ifrost\Foundations\Executable;
+use RuntimeException;
 
 class OverwriteFile implements Executable
 {
@@ -24,9 +26,9 @@ class OverwriteFile implements Executable
         }
 
         try {
-            $file = fopen($this->filename, 'w+') ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable to overwrite file "%s".', $this->filename));
+            $file = fopen($this->filename, 'w+') ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable to overwrite file "%s".', $this->filename));
         }
 
         fwrite($file, $this->content);

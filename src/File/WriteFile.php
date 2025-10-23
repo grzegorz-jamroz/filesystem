@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Exception;
 use Ifrost\Foundations\Executable;
+use RuntimeException;
 
 class WriteFile implements Executable
 {
@@ -24,9 +26,9 @@ class WriteFile implements Executable
         }
 
         try {
-            $file = fopen($this->filename, 'a+') ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable to write to file %s.', $this->filename));
+            $file = fopen($this->filename, 'a+') ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable to write to file %s.', $this->filename));
         }
 
         fwrite($file, $this->content);

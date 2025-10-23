@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Exception;
 use Ifrost\Filesystem\Directory\CreateDirectoryIfNotExists;
 use Ifrost\Filesystem\Directory\Exception\DirectoryAlreadyExists;
 use Ifrost\Filesystem\File\Exception\FileAlreadyExists;
 use Ifrost\Filesystem\File\Exception\FileNotExist;
 use Ifrost\Foundations\Executable;
+use RuntimeException;
 
 class RenameFile implements Executable
 {
@@ -48,9 +50,9 @@ class RenameFile implements Executable
         }
 
         try {
-            rename($this->oldFilename, $this->newFilename) ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable rename file "%s". ', $this->oldFilename));
+            rename($this->oldFilename, $this->newFilename) ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable rename file "%s". ', $this->oldFilename));
         }
     }
 }

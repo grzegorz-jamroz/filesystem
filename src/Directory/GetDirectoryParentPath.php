@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ifrost\Filesystem\Directory;
 
 use Ifrost\Foundations\Acquirable;
+use InvalidArgumentException;
 
 class GetDirectoryParentPath implements Acquirable
 {
@@ -31,13 +32,13 @@ class GetDirectoryParentPath implements Acquirable
         }
 
         if ($pos === false) {
-            throw new \InvalidArgumentException(sprintf('Directory path has to contain at least one Trailing Slash "/" or "\" character. Invalid directory path "%s".', $this->directoryPath));
+            throw new InvalidArgumentException(sprintf('Directory path has to contain at least one Trailing Slash "/" or "\" character. Invalid directory path "%s".', $this->directoryPath));
         }
 
         $length = strlen($this->directoryPath);
 
         if ($pos === $length - 1) {
-            throw new \InvalidArgumentException(sprintf('Directory path has to contain string after last Trailing Slash "/" or "\" character. Invalid directory path "%s".', $this->directoryPath));
+            throw new InvalidArgumentException(sprintf('Directory path has to contain string after last Trailing Slash "/" or "\" character. Invalid directory path "%s".', $this->directoryPath));
         }
 
         if ($pos === 0) {

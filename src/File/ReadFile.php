@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Exception;
 use Ifrost\Filesystem\File\Exception\FileNotExist;
 use Ifrost\Foundations\Acquirable;
+use RuntimeException;
 
 class ReadFile implements Acquirable
 {
@@ -25,9 +27,9 @@ class ReadFile implements Acquirable
         try {
             $content = file_get_contents($this->filename);
 
-            return $content !== false ? $content : throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable to read content of file %s.', $this->filename));
+            return $content !== false ? $content : throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable to read content of file %s.', $this->filename));
         }
     }
 }

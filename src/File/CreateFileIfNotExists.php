@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Exception;
 use Ifrost\Filesystem\Directory\CreateDirectoryIfNotExists;
 use Ifrost\Filesystem\File\Exception\FileAlreadyExists;
 use Ifrost\Foundations\Executable;
+use RuntimeException;
 
 class CreateFileIfNotExists implements Executable
 {
@@ -35,13 +37,13 @@ class CreateFileIfNotExists implements Executable
 
         try {
             (new CreateDirectoryIfNotExists($directoryPath))->execute();
-        } catch (\Exception) {
+        } catch (Exception) {
         }
 
         try {
-            $file = fopen($this->filename, 'w+') ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable to create file "%s".', $this->filename));
+            $file = fopen($this->filename, 'w+') ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable to create file "%s".', $this->filename));
         }
 
         fwrite($file, $this->content);

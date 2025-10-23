@@ -15,12 +15,9 @@ class Directory implements DirectoryInterface
     {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function create(
         int $permissions = 0777,
-        bool $recursive = true
+        bool $recursive = true,
     ): void {
         (new Operation\CreateDirectoryIfNotExists($this->path, $permissions, $recursive))->execute();
     }
@@ -50,49 +47,31 @@ class Directory implements DirectoryInterface
         return (new Operation\GetDirectoryParentPath($this->path))->acquire();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getFiles(array $options = []): array
     {
         return (new Operation\GetFilesFromDirectory($this->path, $options))->acquire();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getDirectories(array $options = []): array
     {
         return (new Operation\GetSubDirectoriesFromDirectory($this->path, $options))->acquire();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getFilesAndDirectories(array $options = []): array
     {
         return (new Operation\GetFilesAndSubDirectoriesFromDirectory($this->path, $options))->acquire();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function countFiles(array $options = []): int
     {
         return (new Operation\CountFilesInDirectory($this->path, $options))->acquire();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function countDirectories(array $options = []): int
     {
         return (new Operation\CountSubDirectoriesInDirectory($this->path, $options))->acquire();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function countFilesAndDirectories(array $options = []): int
     {
         return (new Operation\CountFilesAndDirectories($this->path, $options))->acquire();

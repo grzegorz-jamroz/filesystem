@@ -6,6 +6,7 @@ namespace Ifrost\Filesystem\Directory;
 
 use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;
 use Ifrost\Foundations\Acquirable;
+use InvalidArgumentException;
 use PlainDataTransformer\Transform;
 
 class GetFilesFromDirectory implements Acquirable
@@ -16,6 +17,7 @@ class GetFilesFromDirectory implements Acquirable
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * extension => string | default: empty string
      * recursive => bool | default: false
@@ -46,6 +48,7 @@ class GetFilesFromDirectory implements Acquirable
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * extension => string | default: empty string
      * recursive => bool | default: false
@@ -62,7 +65,7 @@ class GetFilesFromDirectory implements Acquirable
         }
 
         if (!is_dir($dirPath)) {
-            throw new \InvalidArgumentException(sprintf('%s is not directory.', $dirPath));
+            throw new InvalidArgumentException(sprintf('%s is not directory.', $dirPath));
         }
 
         if (substr($dirPath, strlen($dirPath) - 1, 1) !== '/') {

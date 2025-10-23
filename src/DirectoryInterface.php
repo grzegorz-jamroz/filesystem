@@ -17,7 +17,7 @@ interface DirectoryInterface
      */
     public function create(
         int $permissions = 0777,
-        bool $recursive = true
+        bool $recursive = true,
     ): void;
 
     public function delete(): void;
@@ -35,6 +35,7 @@ interface DirectoryInterface
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * extension => string | default: empty string
      * recursive => bool | default: false
@@ -48,6 +49,7 @@ interface DirectoryInterface
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * recursive => bool | default: false
      * order => string (asc or desc) | default: asc
@@ -58,6 +60,7 @@ interface DirectoryInterface
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * recursive => bool | default: false
      * order => string (asc or desc) | default: asc
@@ -68,6 +71,7 @@ interface DirectoryInterface
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * recursive => bool | default: false
      * order => string (asc or desc) | default: asc
@@ -76,6 +80,7 @@ interface DirectoryInterface
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * recursive => bool | default: false
      * order => string (asc or desc) | default: asc
@@ -84,6 +89,7 @@ interface DirectoryInterface
 
     /**
      * @param array<string, mixed> $options
+     *
      * @description options:
      * extension => string | default: empty string
      * recursive => bool | default: false

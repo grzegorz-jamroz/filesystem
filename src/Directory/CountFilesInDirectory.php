@@ -10,6 +10,7 @@ class CountFilesInDirectory implements Acquirable
 {
     /**
      * @param array<string, mixed> $options
+     *
      * @GetFilesFromDirectory - the same options
      */
     public function __construct(

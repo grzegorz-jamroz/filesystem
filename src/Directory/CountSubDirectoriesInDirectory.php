@@ -10,6 +10,7 @@ class CountSubDirectoriesInDirectory implements Acquirable
 {
     /**
      * @param array<string, mixed> $options
+     *
      * @GetSubDirectoriesFromDirectory - the same options
      */
     public function __construct(

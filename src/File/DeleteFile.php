@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Exception;
 use Ifrost\Foundations\Executable;
+use RuntimeException;
 
 class DeleteFile implements Executable
 {
@@ -25,9 +27,9 @@ class DeleteFile implements Executable
         }
 
         try {
-            unlink($this->filename) ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable remove file "%s". ', $this->filename));
+            unlink($this->filename) ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable remove file "%s". ', $this->filename));
         }
     }
 }

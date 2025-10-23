@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\File;
 
+use Exception;
 use Ifrost\Foundations\Acquirable;
+use InvalidArgumentException;
+use RuntimeException;
 
 class GetFileLine implements Acquirable
 {
@@ -17,16 +20,16 @@ class GetFileLine implements Acquirable
     public function acquire(): string
     {
         if (!is_file($this->filename)) {
-            throw new \RuntimeException(sprintf('Unable to read file. File %s not exist.', $this->filename));
+            throw new RuntimeException(sprintf('Unable to read file. File %s not exist.', $this->filename));
         }
 
         $count = 0;
-        $this->lineNumber > 0 ?: throw new \InvalidArgumentException('Line number has to be greater than 0".');
+        $this->lineNumber > 0 ?: throw new InvalidArgumentException('Line number has to be greater than 0".');
 
         try {
-            $file = fopen($this->filename, 'r') ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable to read file %s.', $this->filename));
+            $file = fopen($this->filename, 'r') ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable to read file %s.', $this->filename));
         }
 
         while (!feof($file)) {
@@ -40,6 +43,6 @@ class GetFileLine implements Acquirable
 
         fclose($file);
 
-        throw new \Exception(sprintf('Required line %s does not exist inside file %s.', $this->lineNumber, $this->filename));
+        throw new Exception(sprintf('Required line %s does not exist inside file %s.', $this->lineNumber, $this->filename));
     }
 }

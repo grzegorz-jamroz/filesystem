@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\Directory\Exception;
 
-class DirectoryAlreadyExists extends \Exception
+use Exception;
+
+class DirectoryAlreadyExists extends Exception
 {
 }

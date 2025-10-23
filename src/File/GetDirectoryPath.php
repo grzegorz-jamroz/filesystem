@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ifrost\Filesystem\File;
 
 use Ifrost\Foundations\Acquirable;
+use InvalidArgumentException;
 
 class GetDirectoryPath implements Acquirable
 {
@@ -27,13 +28,13 @@ class GetDirectoryPath implements Acquirable
         }
 
         if ($pos === false) {
-            throw new \InvalidArgumentException(sprintf('Filename has to contain at least one Trailing Slash "/" character. Invalid filename "%s".', $this->filename));
+            throw new InvalidArgumentException(sprintf('Filename has to contain at least one Trailing Slash "/" character. Invalid filename "%s".', $this->filename));
         }
 
         $length = strlen($this->filename);
 
         if ($pos === $length - 1) {
-            throw new \InvalidArgumentException(sprintf('Filename has to contain string after last Trailing Slash "/" character. Invalid filename "%s".', $this->filename));
+            throw new InvalidArgumentException(sprintf('Filename has to contain string after last Trailing Slash "/" character. Invalid filename "%s".', $this->filename));
         }
 
         if ($pos === 0) {

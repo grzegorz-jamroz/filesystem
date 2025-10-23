@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\Directory;
 
-use Ifrost\Foundations\Executable;
+use Exception;
 use Ifrost\Filesystem\File\DeleteFile;
+use Ifrost\Foundations\Executable;
+use InvalidArgumentException;
+use RuntimeException;
 
 class DeleteDirectoryWithAllContent implements Executable
 {
@@ -28,7 +31,7 @@ class DeleteDirectoryWithAllContent implements Executable
         }
 
         if (!is_dir($dirPath)) {
-            throw new \InvalidArgumentException(sprintf('%s is not directory.', $dirPath));
+            throw new InvalidArgumentException(sprintf('%s is not directory.', $dirPath));
         }
 
         if (substr($dirPath, strlen($dirPath) - 1, 1) !== '/') {
@@ -48,11 +51,11 @@ class DeleteDirectoryWithAllContent implements Executable
         }
 
         try {
-            rmdir($dirPath) ?: throw new \RuntimeException();
-        } catch (\Exception) {
+            rmdir($dirPath) ?: throw new RuntimeException();
+        } catch (Exception) {
             $dirPath = strlen($dirPath) > 1 ? rtrim($dirPath, '/') : $dirPath;
 
-            throw new \RuntimeException(sprintf('Unable remove directory "%s".', $dirPath));
+            throw new RuntimeException(sprintf('Unable remove directory "%s".', $dirPath));
         }
     }
 }

@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\Directory;
 
+use Exception;
 use Ifrost\Filesystem\Directory\Exception\DirectoryAlreadyExists;
 use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;
 use Ifrost\Filesystem\File\CopyFile;
 use Ifrost\Foundations\Executable;
+use InvalidArgumentException;
+use RuntimeException;
 
 class CopyDirectory implements Executable
 {
@@ -28,7 +31,7 @@ class CopyDirectory implements Executable
         }
 
         if (!is_dir($this->oldDirectoryPath)) {
-            throw new \InvalidArgumentException(sprintf('Unable copy directory "%s". Given directory path is not directory.', $this->oldDirectoryPath));
+            throw new InvalidArgumentException(sprintf('Unable copy directory "%s". Given directory path is not directory.', $this->oldDirectoryPath));
         }
 
         try {
@@ -39,8 +42,8 @@ class CopyDirectory implements Executable
 
         try {
             $this->copyContent();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable copy directory "%s".', $this->oldDirectoryPath));
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable copy directory "%s".', $this->oldDirectoryPath));
         }
     }
 

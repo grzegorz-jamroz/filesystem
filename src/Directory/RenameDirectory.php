@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Ifrost\Filesystem\Directory;
 
-use Ifrost\Foundations\Executable;
+use Exception;
 use Ifrost\Filesystem\Directory\Exception\DirectoryAlreadyExists;
 use Ifrost\Filesystem\Directory\Exception\DirectoryNotExist;
+use Ifrost\Foundations\Executable;
+use RuntimeException;
 
 class RenameDirectory implements Executable
 {
@@ -43,9 +45,9 @@ class RenameDirectory implements Executable
         }
 
         try {
-            rename($this->oldDirectory, $this->newDirectory) ?: throw new \RuntimeException();
-        } catch (\Exception) {
-            throw new \RuntimeException(sprintf('Unable rename directory "%s". ', $this->oldDirectory));
+            rename($this->oldDirectory, $this->newDirectory) ?: throw new RuntimeException();
+        } catch (Exception) {
+            throw new RuntimeException(sprintf('Unable rename directory "%s". ', $this->oldDirectory));
         }
     }
 }
