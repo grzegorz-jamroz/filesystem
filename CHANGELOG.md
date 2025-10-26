@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## [v1.0.1] - 2025.10.26
 ### Delete
 - remove composer.lock
 
@@ -21,5 +21,6 @@
 - Update dependencies
   - plain-data-transformer to v1.0.0
 
+[v1.0.1]: https://github.com/grzegorz-jamroz/filesystem/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/grzegorz-jamroz/filesystem/releases/tag/v1.0.0
 [v0.1.0]: https://github.com/grzegorz-jamroz/filesystem/releases/tag/v0.1.0
