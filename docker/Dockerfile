@@ -34,7 +34,6 @@ WORKDIR /app
 RUN touch /app/.env
 
 COPY ./composer.json /app/composer.json
-COPY ./composer.lock /app/composer.lock
 COPY ./tests /app/tests
 
 RUN composer install

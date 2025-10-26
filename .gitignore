@@ -4,7 +4,7 @@
 .phpunit.cache
 .env
 
-composer.phar
+composer.lock
 
 vendor
 data

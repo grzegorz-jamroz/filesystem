@@ -1,4 +1,8 @@
 # Changelog
+## Unreleased
+### Delete
+- remove composer.lock
+
 ## [v1.0.0] - 2025.10.23
 ### Add
 - add docker support for development environment
