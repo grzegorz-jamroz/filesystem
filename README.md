@@ -52,6 +52,15 @@ docker compose exec app vendor/bin/phpunit --filter <testMethodName> <path/to/Te
 docker compose exec app vendor/bin/phpunit --filter testShouldReturnExpectedFloat tests/Unit/TransformNumeric/ToFloatTest.php
 ```
 
+### Run coverage report
+
+1. [Enable xdebug](#enable-xdebug)
+2. Run:
+```shell
+docker compose exec app bin/coverage
+```
+
+
 ### Enable xdebug
 
 ```shell

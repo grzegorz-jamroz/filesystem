@@ -37,6 +37,8 @@ COPY ./composer.json /app/composer.json
 COPY ./tests /app/tests
 
 RUN composer install
+# For some reason composer didn't install all dependencies in latest versions, so running update as a workaround
+RUN composer update
 
 RUN sudo chown -R appuser:appuser /app
 RUN sudo mkdir -p /opt/phpstorm-coverage && sudo chown 1000:1000 /opt/phpstorm-coverage

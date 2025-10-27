@@ -1,4 +1,8 @@
 # Changelog
+## Unreleased
+### Add
+- add coverage script and update README for coverage report instructions
+
 ## [v1.0.1] - 2025.10.26
 ### Delete
 - remove composer.lock
